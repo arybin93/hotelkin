@@ -1,1 +1,6 @@
 Flask
+Flask_sqlalchemy
+sqlalchemy-utils
+Flask-Migrate
+flask-restful
+mysqlclient
