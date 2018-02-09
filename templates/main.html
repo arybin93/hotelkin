@@ -14,6 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
+    <script src="static/js/main.js" type="text/javascript"></script>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -32,25 +33,23 @@
     <div class="container-fluid">
         <div class="row content">
             <div class="col-sm-4 sidenav">
-                <h3>Друзья</h3>
+                <h3>Friends</h3>
                 <div class="scrollbar-friends scrollbar-primary">
                     <div class="force-overflow">
-                        <div class="list-group">
+                        <div class="list-group" id="list_friends">
                             <a href="#" class="list-group-item active">First item</a>
                             <a href="#" class="list-group-item">Second item</a>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary">Добавьте друзей</button>
+                    <button type="button" class="btn btn-primary add-friend" id="add_friend">Add friends</button>
                 </div>
             </div>
 
             <div class="col-sm-6">
-                <div class="list-group gifts">
-                    <a href="#" class="list-group-item">First item</a>
-                    <a href="#" class="list-group-item">Second item</a>
-                    <a href="#" class="list-group-item">Third item</a>
+                <div class="list-group wishes" id="list_wishes">
+                    <p class="list-group-item wish">First</p>
                 </div>
             </div>
         </div>
