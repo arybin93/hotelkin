@@ -18,7 +18,7 @@ class Config(object):
     DEBUG = True
     CSRF_ENABLED = True
 
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:1234@localhost:3306/my_gift'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:root@localhost:3306/my_gifts'
     DATABASE_CONNECT_OPTIONS = {'encoding': 'utf8'}
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
