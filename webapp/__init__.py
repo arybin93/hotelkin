@@ -10,6 +10,8 @@ app.config.from_object('config.DevelopConfig')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+from webapp.models import User, Wish
+
 
 @app.route('/')
 def index():

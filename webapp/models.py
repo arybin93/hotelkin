@@ -16,7 +16,7 @@ class Base(db.Model):
 
 class User(Base):
     vk_id = db.Column(db.Integer, unique=True, nullable=False)
-    name = db.Column(db.Unicode, nullable=True)
+    name = db.Column(db.Unicode(55), nullable=True)
 
     wishes = relationship('Wish', back_populates='user')
 
