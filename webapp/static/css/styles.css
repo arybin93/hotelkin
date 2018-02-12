@@ -42,6 +42,17 @@ footer {
     background: #fff;
     overflow-y: scroll;
 }
+
+.scrollbar-wish {
+    margin-right: 10px;
+    margin-left: 10px;
+    float: left;
+    height: 500px;
+    width: 500px;
+    background: #fff;
+    overflow-y: scroll;
+}
+
 .force-overflow {
     min-height: 450px;
 }
@@ -56,10 +67,33 @@ footer {
   background-color: #4285F4; }
 
 .wishes {
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-right: 5px;
 }
 
 .add-friend {
     margin: 0 auto;
     display: block;
+}
+
+.wish-item {
+    display: flex;
+    align-items: center;
+    width: 450px;
+}
+
+.text {
+    margin-right: 10px;
+    width: 450px;
+    word-break: break-all;
+}
+
+.text p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.wish-item-add-new {
+    text-align: center;
+    font-size: 24px;
 }

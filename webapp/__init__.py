@@ -12,7 +12,10 @@ migrate = Migrate(app, db)
 
 from webapp.models import User, Wish
 
+# api
 
+
+# views
 @app.route('/')
 def index():
     return render_template('main.html')

@@ -59,7 +59,7 @@ $(document).ready(function() {
     console.log(user_id);
 
     // get list of wishes for current user
-    get_list_of_wishes(user_id)
+    get_list_of_wishes(user_id);
 
     // get list of friends
     get_friends();
