@@ -1,0 +1,65 @@
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  width: 800px;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.row.content {
+    width: 800px;
+    height: 500px;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+      height: auto;
+      padding: 15px;
+  }
+  .row.content {height: auto;}
+}
+
+.scrollbar-friends {
+    margin-right: 10px;
+    margin-left: 10px;
+    float: left;
+    height: 400px;
+    width: 220px;
+    background: #fff;
+    overflow-y: scroll;
+}
+.force-overflow {
+    min-height: 450px;
+}
+
+.scrollbar-primary::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5; }
+
+.scrollbar-primary::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #4285F4; }
+
+.wishes {
+    padding-top: 10px;
+}
+
+.add-friend {
+    margin: 0 auto;
+    display: block;
+}

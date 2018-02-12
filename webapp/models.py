@@ -2,7 +2,7 @@
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 
-from my_gifts import db
+from webapp import db
 
 
 class Base(db.Model):
