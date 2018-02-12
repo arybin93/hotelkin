@@ -32,3 +32,10 @@ class Wish(Base):
 
     user_id = db.Column(db.Integer, ForeignKey('user.id'))
     user = relationship('User', uselist=False, back_populates='wishes')
+
+    @property
+    def serialize(self):
+        return {
+            'text': self.text,
+            'description': self.description
+        }

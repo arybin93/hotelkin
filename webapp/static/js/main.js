@@ -74,5 +74,4 @@ $(document).ready(function() {
     // listener for add new wish
     // listener for like wish
     // listener for booking wish
-    // listener for Top-100 wish, request for get list of rate for all users
 });

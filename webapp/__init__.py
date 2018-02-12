@@ -11,11 +11,13 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from webapp.models import User, Wish
+from webapp.api.urls import get_v1_resources
 
 # api
+api_v1 = get_v1_resources()
+app.register_blueprint(api_v1.blueprint)
 
 
-# views
 @app.route('/')
 def index():
     return render_template('main.html')
