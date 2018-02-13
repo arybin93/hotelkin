@@ -36,6 +36,9 @@ class Wish(Base):
     @property
     def serialize(self):
         return {
+            'id': self.id,
             'text': self.text,
-            'description': self.description
+            'description': self.description,
+            'link': self.link,
+            'vk_id': self.user.vk_id
         }
