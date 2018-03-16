@@ -1,31 +1,118 @@
-/* Remove the navbar's default margin-bottom and rounded borders */
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.navbar-brand {
+    margin-top: -6px;
+    padding: 5px;
+}
+
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
   width: 800px;
 }
 
-/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
 .row.content {
     width: 800px;
     height: 500px;
 }
 
-/* Set gray background color and 100% height */
 .sidenav {
     background-color: #f1f1f1;
     height: 100%;
 }
 
-/* Set black background color, white text and some padding */
+body,html,.row-offcanvas {
+  height:100%;
+}
+
+body {
+  padding-top: 50px;
+}
+
+#sidebar {
+  width: inherit;
+  min-width: 220px;
+  max-width: 220px;
+  background-color:#f5f5f5;
+  height: 500px;
+  float: left;
+  position:relative;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+#main {
+  height:500px;
+  width: 580px;
+  overflow:auto;
+}
+
+/*
+ * off Canvas sidebar
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 800px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    width:calc(100% + 220px);
+  }
+
+  .row-offcanvas-left
+  {
+    left: -220px;
+  }
+
+  .row-offcanvas-left.active {
+    left: 0;
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+  }
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #446e9b;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #406c9b;
+}
+
+
+
+
+/* Set black background color, white text and some padding
 footer {
     background-color: #555;
     color: white;
     padding: 15px;
-}
+} */
 
 /* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
+/*@media screen and (max-width: 767px) {
   .sidenav {
       height: auto;
       padding: 15px;
@@ -97,3 +184,4 @@ footer {
     text-align: center;
     font-size: 24px;
 }
+*/

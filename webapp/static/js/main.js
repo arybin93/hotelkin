@@ -5,6 +5,14 @@ var user_id = 0;
 
 var wish_item_templete = '';
 
+var add_wish_button = '<div class="list-group-item">' +
+                        '<div class="wish-item-add-new">' +
+                        '<a class="icon" href="#" title="Add new wish">' +
+                            '<span class="fa fa-plus glyphicon glyphicon-plus"></span>' +
+                        '</a>' +
+                        '</div>' +
+                       '</div>';
+
 $.extend({
   getUrlVars: function(){
     var vars = [], hash;
@@ -47,17 +55,9 @@ function get_list_of_wishes(user_id) {
             user_id: user_id
         },
         success:function(data) {
-            console.log(wish_list);
-
             $.each(data.result, function( index, value ) {
-                console.log(user_id);
-                console.log(value['vk_id']);
                 if (value['vk_id'].toString() == user_id) {
-                    console.log(value['id']);
-                    console.log(value['text']);
-                    console.log(value['description']);
-                    console.log(value['vk_id']);
-
+                    $(wish_list).append(add_wish_button);
                     $(wish_list).append('' +
                          '<div class="list-group-item wish">' +
                             '<div class="wish-item">' +
@@ -101,6 +101,12 @@ function get_top_wishes() {
 }
 
 $(document).ready(function() {
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+});
+
+$(document).ready(function() {
     // get info about current user
     user_id = $.getUrlVar('viewer_id');
     user_id = '1234';
@@ -119,7 +125,12 @@ $(document).ready(function() {
     });
     */
     // listener for if click on friend, get list of wish for friend
+    $("#list_friends").click(function() {
+        console.log('click friend');
+    });
+
     // listener for add new wish
+
     // listener for like wish
     // listener for booking wish
 });
