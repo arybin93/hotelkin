@@ -3,8 +3,6 @@
 const MAIN_URL = window.location.protocol + "//" + window.location.host + "/";
 var user_id = 0;
 
-var wish_item_templete = '';
-
 var add_wish_button = '<div class="list-group-item">' +
                         '<div class="wish-item-add-new">' +
                         '<a class="icon" href="#" title="Add new wish">' +
@@ -176,41 +174,9 @@ $(document).ready(function() {
     // get list of friends
     /*get_friends();
 
-    // add new friends listener
-    $("#add_friend").click(function() {
-        console.log('invite new friends');
-         VK.callMethod("showInviteBox");
-    });
-    */
     // listener for if click on friend, get list of wish for friend
     $("#list_friends").click(function() {
         console.log('click friend');
     });
-
-    // listener for add new wish
-
-    // listener for like wish
-    // listener for booking wish
+    */
 });
-
-/*
-'' +
-                         '<div class="list-group-item wish">' +
-                            '<div class="wish-item">' +
-                                '<div class="text">' +
-                                    '<h4>' + value['text'] + '</h4>' +
-                                    '<p>' + value['description'] + '</p>' +
-                                    '<a href=\"' + value['link'] + '\">Link</a>' +
-                                '</div>' +
-                                '<div> ' +
-                                     '<a class="icon" href="" title="Edit wish"> '+
-                                     '<span class="fa fa-pencil glyphicon glyphicon-pencil"></span>' +
-                                     '</a>' +
-                                     '<a class="icon" href="" title="Delete wish">' +
-                                     '<span class="fa fa-trash glyphicon glyphicon-trash"></span>' +
-                                     '</a>' +
-                                '<div/>' +
-                         '</div>' +
-                        '</div>'
-/
- */
