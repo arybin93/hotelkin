@@ -122,9 +122,6 @@ function get_list_of_wishes(user_id) {
     $.ajax({
         url: MAIN_URL + 'api/v1/wishes/' + user_id.toString(),
         type: "get",
-        data: {
-            user_id: user_id
-        },
         success:function(data) {
             $.each(data.result, function( index, value ) {
                 if (value['vk_id'].toString() == user_id) {
