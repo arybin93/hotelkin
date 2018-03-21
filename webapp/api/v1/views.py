@@ -11,7 +11,7 @@ class Wishes(Resource):
         """ Get wishes for user id """
         user = User.query.filter_by(vk_id=user_id).first()
         if not user:
-            user = User.object.create(vk_id=user_id)
+            user = User(vk_id=user_id)
             db.session.add(user)
             db.session.commit()
 
