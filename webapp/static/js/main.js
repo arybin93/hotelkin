@@ -98,7 +98,6 @@ function gen_my_wish_item(value) {
     return div
 }
 
-/*
 VK.init(function() {
     console.log('done');
     }, function() {
@@ -111,7 +110,7 @@ function get_friends() {
         console.log($("#list_friends"));
     });
 }
-*/
+
 function get_list_of_wishes(user_id) {
     console.log('get_list_of_wishes');
     var wish_list = $("#list_wishes");
@@ -172,11 +171,10 @@ $(document).ready(function() {
     get_list_of_wishes(user_id);
 
     // get list of friends
-    /*get_friends();
+    get_friends();
 
     // listener for if click on friend, get list of wish for friend
     $("#list_friends").click(function() {
         console.log('click friend');
     });
-    */
 });

@@ -78,7 +78,6 @@ body {
   }
 }
 
-
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -100,88 +99,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #406c9b;
 }
-
-
-
-
-/* Set black background color, white text and some padding
-footer {
-    background-color: #555;
-    color: white;
-    padding: 15px;
-} */
-
-/* On small screens, set height to 'auto' for sidenav and grid */
-/*@media screen and (max-width: 767px) {
-  .sidenav {
-      height: auto;
-      padding: 15px;
-  }
-  .row.content {height: auto;}
-}
-
-.scrollbar-friends {
-    margin-right: 10px;
-    margin-left: 10px;
-    float: left;
-    height: 400px;
-    width: 220px;
-    background: #fff;
-    overflow-y: scroll;
-}
-
-.scrollbar-wish {
-    margin-right: 10px;
-    margin-left: 10px;
-    float: left;
-    height: 500px;
-    width: 500px;
-    background: #fff;
-    overflow-y: scroll;
-}
-
-.force-overflow {
-    min-height: 450px;
-}
-
-.scrollbar-primary::-webkit-scrollbar {
-  width: 12px;
-  background-color: #F5F5F5; }
-
-.scrollbar-primary::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  background-color: #4285F4; }
-
-.wishes {
-    padding-top: 5px;
-    padding-right: 5px;
-}
-
-.add-friend {
-    margin: 0 auto;
-    display: block;
-}
-
-.wish-item {
-    display: flex;
-    align-items: center;
-    width: 450px;
-}
-
-.text {
-    margin-right: 10px;
-    width: 450px;
-    word-break: break-all;
-}
-
-.text p {
-    margin: 0;
-    font-size: 16px;
-}
-
-.wish-item-add-new {
-    text-align: center;
-    font-size: 24px;
-}
-*/
