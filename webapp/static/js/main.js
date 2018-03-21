@@ -164,7 +164,6 @@ $(document).ready(function() {
 $(document).ready(function() {
     // get info about current user
     user_id = $.getUrlVar('viewer_id');
-    user_id = '1234';
     console.log(user_id);
 
     // get list of wishes for current user
