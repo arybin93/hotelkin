@@ -53,6 +53,7 @@ body {
 /*
  * off Canvas sidebar
  * --------------------------------------------------
+ * row-offcanvas row-offcanvas-left
  */
 @media screen and (max-width: 800px) {
   .row-offcanvas {
@@ -61,11 +62,6 @@ body {
     -moz-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
     width:calc(100% + 220px);
-  }
-
-  .row-offcanvas-left
-  {
-    left: -220px;
   }
 
   .row-offcanvas-left.active {
