@@ -8,5 +8,5 @@ def get_v1_resources():
     api_bp = Blueprint('api_v1', __name__, url_prefix='/api/v1')
     api = Api(api_bp)
 
-    api.add_resource(Wishes, '/wishes/<int:user_id>')
+    api.add_resource(Wishes, '/user/<int:user_id>/wishes')
     return api

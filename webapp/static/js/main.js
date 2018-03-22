@@ -3,14 +3,6 @@
 const MAIN_URL = window.location.protocol + "//" + window.location.host + "/";
 var user_id = 0;
 
-var add_wish_button = '<div class="list-group-item">' +
-                        '<div class="wish-item-add-new">' +
-                        '<a class="icon" href="#" title="Add new wish">' +
-                            '<span class="fa fa-plus glyphicon glyphicon-plus"></span>' +
-                        '</a>' +
-                        '</div>' +
-                       '</div>';
-
 $.extend({
   getUrlVars: function(){
     var vars = [], hash;
@@ -61,14 +53,16 @@ function gen_my_wish_item(value) {
 
     var text = document.createElement("p");
     text.textContent = value['description'];
-
-    var link = document.createElement("a");
-    link.href = value['link'];
-    link.textContent = 'Cсылка';
+    console.log(value['link']);
+    if (value['link']) {
+        var link = document.createElement("a");
+        link.href = value['link'];
+        link.textContent = 'Cсылка';
+        div.appendChild(link);
+    }
 
     div.appendChild(title);
     div.appendChild(text);
-    div.appendChild(link);
 
     // add buttons
     var control_span = document.createElement("span");
@@ -120,7 +114,7 @@ function get_list_of_wishes(user_id) {
 
     // fill list
     $.ajax({
-        url: MAIN_URL + 'api/v1/wishes/' + user_id.toString(),
+        url: MAIN_URL + 'api/v1/user/' + user_id.toString() + '/wishes' ,
         type: "get",
         success:function(data) {
             $.each(data.result, function( index, value ) {
@@ -161,6 +155,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     // get info about current user
     user_id = $.getUrlVar('viewer_id');
+    // user_id = 1234;
     console.log(user_id);
 
     // get list of wishes for current user
@@ -168,6 +163,28 @@ $(document).ready(function() {
 
     // get list of friends
     get_friends();
+
+     $("#add_wish_btn").click(function(event) {
+        console.log('add wish');
+
+        var name = $('#id_name').val();
+        var description = $('#id_description').val();
+        var link = $('#id_link').val();
+
+        $.ajax({
+            url: MAIN_URL + 'api/v1/user/' + user_id.toString() + '/wishes',
+            type: "post",
+            data: {
+                'name': name,
+                'description': description,
+                'link': link
+            },
+            success:function(data) {
+                // get actual list
+                get_list_of_wishes(user_id);
+            }
+        });
+     });
 
     // listener for if click on friend, get list of wish for friend
     $("#list_friends").click(function() {
