@@ -2,6 +2,7 @@
 
 const MAIN_URL = window.location.protocol + "//" + window.location.host + "/";
 var user_id = 0;
+const DEVELOP = true;
 
 $.extend({
   getUrlVars: function(){
@@ -53,6 +54,10 @@ function gen_my_wish_item(value) {
 
     var text = document.createElement("p");
     text.textContent = value['description'];
+
+    div.appendChild(title);
+    div.appendChild(text);
+
     console.log(value['link']);
     if (value['link']) {
         var link = document.createElement("a");
@@ -61,16 +66,13 @@ function gen_my_wish_item(value) {
         div.appendChild(link);
     }
 
-    div.appendChild(title);
-    div.appendChild(text);
-
     // add buttons
     var control_span = document.createElement("span");
     control_span.style = "float:right";
 
     var edit_a = document.createElement("a");
     edit_a.className = "icon";
-    edit_a.href = "";
+    edit_a.href = value['id'];
     edit_a.title = "Редактировать хотелку";
     var span_edit = document.createElement("span");
     span_edit.className = "fa fa-pencil glyphicon glyphicon-pencil";
@@ -78,7 +80,7 @@ function gen_my_wish_item(value) {
 
     var delete_a = document.createElement("a");
     delete_a.className = "icon";
-    delete_a.href = "";
+    delete_a.href = value['id'];
     delete_a.title = "Удалить хотелку";
     var span_delete = document.createElement("span");
     span_delete.className = "fa fa-trash glyphicon glyphicon-trash";
@@ -92,11 +94,13 @@ function gen_my_wish_item(value) {
     return div
 }
 
-VK.init(function() {
-    console.log('done');
-    }, function() {
-    console.log('fail');
-}, '5.71');
+if (!DEVELOP) {
+    VK.init(function() {
+        console.log('done');
+        }, function() {
+        console.log('fail');
+    }, '5.71');
+}
 
 function get_friends() {
     VK.api("friends.getAppUsers", {fields: "photo_medium", "test_mode": 1}, function(data) {
@@ -155,16 +159,21 @@ $(document).ready(function() {
 $(document).ready(function() {
     // get info about current user
     user_id = $.getUrlVar('viewer_id');
-    // user_id = 1234;
+    if (DEVELOP) {
+        user_id = 1234;
+    }
+
     console.log(user_id);
 
     // get list of wishes for current user
     get_list_of_wishes(user_id);
 
     // get list of friends
-    get_friends();
+    if (!DEVELOP) {
+        get_friends();
+    }
 
-     $("#add_wish_btn").click(function(event) {
+    $("#add_wish_btn").click(function(event) {
         console.log('add wish');
 
         var name = $('#id_name').val();
@@ -184,7 +193,7 @@ $(document).ready(function() {
                 get_list_of_wishes(user_id);
             }
         });
-     });
+    });
 
     // listener for if click on friend, get list of wish for friend
     $("#list_friends").click(function() {
