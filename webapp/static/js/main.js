@@ -198,5 +198,6 @@ $(document).ready(function() {
     // listener for if click on friend, get list of wish for friend
     $("#list_friends").click(function() {
         console.log('click friend');
+        console.log('test');
     });
 });
