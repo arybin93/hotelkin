@@ -8,6 +8,21 @@ from webapp.api import errors
 from webapp import User, db
 
 
+class Wish(Resource):
+
+    def get(self, user_id, wish_id):
+        """ Get wish by wish_id """
+        pass
+
+    def put(self, user_id, wish_id):
+        """ Update wish by wish_id """
+        pass
+
+    def delete(self, user_id, wish_id):
+        """ Delete wish by wish_id """
+        pass
+
+
 class Wishes(Resource):
     def get(self, user_id):
         """ Get wishes for user id """

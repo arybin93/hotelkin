@@ -71,7 +71,7 @@ function gen_my_wish_item(value) {
     control_span.style = "float:right";
 
     var edit_a = document.createElement("a");
-    edit_a.className = "icon";
+    edit_a.className = "icon edit";
     edit_a.href = value['id'];
     edit_a.title = "Редактировать хотелку";
     var span_edit = document.createElement("span");
@@ -79,7 +79,7 @@ function gen_my_wish_item(value) {
     edit_a.appendChild(span_edit);
 
     var delete_a = document.createElement("a");
-    delete_a.className = "icon";
+    delete_a.className = "icon delete";
     delete_a.href = value['id'];
     delete_a.title = "Удалить хотелку";
     var span_delete = document.createElement("span");
@@ -109,6 +109,20 @@ function get_friends() {
     });
 }
 
+
+function set_handler() {
+    $(".icon.delete").click(function(event) {
+        event.preventDefault();
+        console.log('delete');
+    });
+
+    $(".icon.edit").click(function(event) {
+        event.preventDefault();
+        console.log('edit');
+    });
+}
+
+
 function get_list_of_wishes(user_id) {
     console.log('get_list_of_wishes');
     var wish_list = $("#list_wishes");
@@ -131,6 +145,9 @@ function get_list_of_wishes(user_id) {
                 }
             });
             console.log(data);
+
+            // set hanlder for edit and delete wish
+            set_handler();
         }
     });
 }
