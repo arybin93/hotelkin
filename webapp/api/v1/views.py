@@ -8,7 +8,7 @@ from webapp.api import errors
 from webapp import User, db
 
 
-class WishResources(Resource):
+class WishView(Resource):
 
     def get(self, user_id, wish_id):
         """ Get wish by wish_id """
@@ -89,7 +89,7 @@ class WishResources(Resource):
             abort(404)
 
 
-class WishesResources(Resource):
+class WishesListView(Resource):
     def get(self, user_id):
         """ Get wishes for user id """
         user = User.query.filter_by(vk_id=user_id).first()

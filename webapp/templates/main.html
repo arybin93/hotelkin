@@ -84,6 +84,59 @@
 </div><!--/row-offcanvas -->
 
 <!-- Modal -->
+<div id="delete_wish" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Удалить хотелку</h4>
+          </div>
+          <div class="modal-body">
+              <div>
+                  <h4>Вы удаляете хотелку?</h4>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button id='delete_wish_cancel' type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+              <button id='delete_wish_btn' type="button" class="btn btn-primary" data-dismiss="modal">Да</button>
+          </div>
+        </div>
+     </div>
+ </div>
+<!-- Modal -->
+<div id="edit_wish" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Редактировать хотелку</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form">
+                <div class="form-group">
+                    <label for="id_label_name">Название</label>
+                    <input type="text" class="form-control" id="id_name_edit" placeholder="Название" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_label_description">Описание</label>
+                    <input type="text" class="form-control" id="id_description_edit" placeholder="Описание">
+                </div>
+                <div class="form-group">
+                    <label for="id_label_link">Ссылка</label>
+                    <input type="text" class="form-control" id="id_link_edit" placeholder="Ссылка">
+                </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+              <button id='edit_wish_cancel' type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+              <button id='edit_wish_btn' type="button" class="btn btn-primary" data-dismiss="modal">Сохранить</button>
+          </div>
+        </div>
+     </div>
+ </div>
+<!-- Modal -->
  <div id="add_wish" class="modal fade" role="dialog">
      <div class="modal-dialog">
         <!-- Modal content-->

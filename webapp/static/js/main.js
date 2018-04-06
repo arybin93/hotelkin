@@ -118,13 +118,49 @@ function set_handler() {
         var wish_id = $(this).parent().prevObject[0].id;
         // run modal dialog
         console.log('delete');
+        $("#delete_wish").modal();
+
+        $("#delete_wish_btn").click(function(event) {
+            console.log(wish_id);
+            $.ajax({
+                url: MAIN_URL + 'api/v1/user/' + user_id.toString() + '/wishes/' + wish_id.toString(),
+                type: "delete",
+                data: {},
+                success:function(data) {
+                    // get actual list
+                    get_list_of_wishes(user_id);
+                }
+            });
+        });
     });
 
     $(".icon.edit").click(function(event) {
         event.preventDefault();
         var wish_id = $(this).parent().prevObject[0].id;
-        // run modal dialog
-        console.log('edit');
+        $("#edit_wish").modal();
+
+        $("#edit_wish_btn").click(function(event) {
+            console.log('edit wish');
+
+            var name = $('#id_name_edit').val();
+            var description = $('#id_description_edit').val();
+            var link = $('#id_link_edit').val();
+            console.log(wish_id);
+
+            $.ajax({
+                url: MAIN_URL + 'api/v1/user/' + user_id.toString() + '/wishes/' + wish_id.toString(),
+                type: "put",
+                data: {
+                    'name': name,
+                    'description': description,
+                    'link': link
+                },
+                success:function(data) {
+                    // get actual list
+                    get_list_of_wishes(user_id);
+                }
+            });
+        });
     });
 }
 
