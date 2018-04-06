@@ -73,6 +73,7 @@ function gen_my_wish_item(value) {
     var edit_a = document.createElement("a");
     edit_a.className = "icon edit";
     edit_a.href = value['id'];
+    edit_a.id = value['id']
     edit_a.title = "Редактировать хотелку";
     var span_edit = document.createElement("span");
     span_edit.className = "fa fa-pencil glyphicon glyphicon-pencil";
@@ -81,6 +82,7 @@ function gen_my_wish_item(value) {
     var delete_a = document.createElement("a");
     delete_a.className = "icon delete";
     delete_a.href = value['id'];
+    delete_a.id = value['id']
     delete_a.title = "Удалить хотелку";
     var span_delete = document.createElement("span");
     span_delete.className = "fa fa-trash glyphicon glyphicon-trash";
@@ -113,11 +115,15 @@ function get_friends() {
 function set_handler() {
     $(".icon.delete").click(function(event) {
         event.preventDefault();
+        var wish_id = $(this).parent().prevObject[0].id;
+        // run modal dialog
         console.log('delete');
     });
 
     $(".icon.edit").click(function(event) {
         event.preventDefault();
+        var wish_id = $(this).parent().prevObject[0].id;
+        // run modal dialog
         console.log('edit');
     });
 }
